@@ -1,10 +1,15 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home } from 'pages';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Home, About, Events, Membership, Involvement, Gallery, Store } from 'pages';
 
-export default () => (
+export default ({ menu }: { menu: JSX.Element }) => (
 	<BrowserRouter>
-		<Switch>
-			<Route exact path = '/' component = { Home } />
-		</Switch>
+		{ menu }
+		<Route exact path = '/' component = { Home } />
+		<Route exact path = '/about-us' component = { About } />
+		<Route exact path = '/events' component = { Events } />
+		<Route exact path = '/membership' component = { Membership } />
+		<Route exact path = '/get-involved' component = { Involvement } />
+		<Route exact path = '/gallery' component = { Gallery } />
+		<Route exact path = '/store' component = { Store } />
 	</BrowserRouter>
 );
